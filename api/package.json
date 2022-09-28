@@ -1,0 +1,22 @@
+{
+  "name": "nutripersonal-dashboard-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NutriPersonal/dashboard.git"
+  },
+  "author": "Bruno Ferreira <srbrunoferreira@outlook.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/NutriPersonal/dashboard/issues"
+  },
+  "homepage": "https://github.com/NutriPersonal/dashboard#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
