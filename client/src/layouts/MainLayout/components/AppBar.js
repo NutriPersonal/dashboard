@@ -1,6 +1,6 @@
 import { AppBar as MuiAppBar } from "@mui/material";
 import Toolbar from "@mui/material/Toolbar";
-import { assetLogotypeWhite } from "../../../assets";
+import { assetLogotypeWhite } from "../../../app_assets";
 
 const drawerWidth = 240;
 

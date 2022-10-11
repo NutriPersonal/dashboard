@@ -10,7 +10,7 @@ import DashboardIcon from "@mui/icons-material/Dashboard";
 import GroupsIcon from "@mui/icons-material/Groups";
 import Groups2Icon from "@mui/icons-material/Groups2";
 import GroupAddIcon from "@mui/icons-material/GroupAdd";
-import { demoUserPhoto } from "../../../assets";
+import { demoUserPhoto } from "../../../app_assets";
 import { useNavigate } from "react-router-dom";
 import { Login, PersonAdd } from "@mui/icons-material";
 

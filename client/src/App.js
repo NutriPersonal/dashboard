@@ -5,13 +5,15 @@ import ProtectedRoute from "./components/ProtectedRoute";
 
 import DashboardPage from "./domains/dashboard/dasbhboard_page";
 import NotFoundPage from "./domains/not_found/not_found_page";
-import SignInPage from "./domains/sign_in/sign_in_page";
-import SignUpPage from "./domains/sign_up/sign_up_page";
 import MainLayout from "./layouts/MainLayout/MainLayout";
 import UsersTablePage from "./domains/users/pages/users_table_page";
 import UserCreateEditPage from "./domains/users/pages/user_create_edit_page";
 import NutritionistTablePage from "./domains/nutritionists/pages/nutritionists_table_page";
 import NutritionistCreateEditPage from "./domains/nutritionists/pages/nutritionist_create_edit_page";
+import AuthPage from "./domains/auth/auth_page";
+
+import initFirebase from "./config/firebase";
+import AppColors from "./app_colors";
 
 const theme = createTheme({
   palette: {
@@ -19,7 +21,7 @@ const theme = createTheme({
       main: "#2FC4B2",
     },
     secondary: {
-      main: "#8DE5DB",
+      main: AppColors.pLighter,
     },
   },
   typography: {
@@ -28,18 +30,17 @@ const theme = createTheme({
 });
 
 function App() {
-  // const [user, setUser] = useState(null);
   return (
     <ThemeProvider theme={theme}>
       <BrowserRouter>
         <Routes>
           <Route
             path="/entrar"
-            element={<ProtectedRoute page={<SignInPage />} />}
+            element={<ProtectedRoute page={<AuthPage />} />}
           />
           <Route
             path="/registrar"
-            element={<ProtectedRoute page={<SignUpPage />} />}
+            element={<ProtectedRoute page={<AuthPage />} />}
           />
           <Route element={<MainLayout />}>
             <Route
@@ -52,7 +53,7 @@ function App() {
                 element={<ProtectedRoute page={<NutritionistTablePage />} />}
               />
               <Route
-                path="editar/:id"
+                path=":id/editar"
                 element={
                   <ProtectedRoute page={<NutritionistCreateEditPage />} />
                 }
@@ -67,7 +68,7 @@ function App() {
             <Route path="/usuarios">
               <Route index element={<UsersTablePage />} />
               <Route
-                path="editar/:id"
+                path=":id/editar"
                 element={<ProtectedRoute page={<UserCreateEditPage />} />}
               />
               <Route
