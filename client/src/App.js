@@ -12,7 +12,6 @@ import NutritionistTablePage from "./domains/nutritionists/pages/nutritionists_t
 import NutritionistCreateEditPage from "./domains/nutritionists/pages/nutritionist_create_edit_page";
 import AuthPage from "./domains/auth/auth_page";
 
-import initFirebase from "./config/firebase";
 import AppColors from "./app_colors";
 
 const theme = createTheme({

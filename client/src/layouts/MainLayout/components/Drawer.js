@@ -13,6 +13,7 @@ import GroupAddIcon from "@mui/icons-material/GroupAdd";
 import { demoUserPhoto } from "../../../app_assets";
 import { useNavigate } from "react-router-dom";
 import { Login, PersonAdd } from "@mui/icons-material";
+import AuthService from "../../../services/auth_service";
 
 const drawerWidth = 240;
 
@@ -56,6 +57,10 @@ const Drawer = () => {
     },
   ];
 
+  const authService = new AuthService();
+  const currentUserName = authService.getCurrentUserName();
+  const currentUserPhotoUrl = authService.getCurrentUserPhotoUrl();
+
   return (
     <MuiDrawer
       sx={{
@@ -72,9 +77,13 @@ const Drawer = () => {
       <Toolbar
         sx={{ my: 5, justifyContent: "center", flexDirection: "column" }}
       >
-        <Avatar src={demoUserPhoto} sx={{ width: 120, height: 120 }} />
+        <Avatar
+          alt={currentUserName}
+          src={currentUserPhotoUrl}
+          sx={{ width: 120, height: 120 }}
+        />
         <Box>
-          <p>Bruno Ferreira</p>
+          <p>{currentUserName}</p>
         </Box>
       </Toolbar>
       <Divider />
