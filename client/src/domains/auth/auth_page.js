@@ -5,9 +5,9 @@ import { assetLogomarkWhite } from "../../app_assets";
 import AppColors from "../../app_colors";
 import Button from "@mui/material/Button";
 import GoogleIcon from "@mui/icons-material/Google";
-import GoogleSignInService from "./services/google_sign_service";
 import { useState } from "react";
-import { Alert, Snackbar } from "@mui/material";
+import { Snackbar } from "@mui/material";
+import GoogleSignInService from "../../services/google_sign_service";
 
 const SideContainer = ({ children, backgroundColor }) => {
   return (

@@ -1,4 +1,4 @@
-import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { GoogleAuthProvider, signInWithPopup, signOut } from "firebase/auth";
 import { getAuth } from "firebase/auth";
 
 class GoogleSignInService {
@@ -23,6 +23,18 @@ class GoogleSignInService {
         );
 
         return response.user !== null;
+      })
+      .catch((error) => {
+        console.log("error", error);
+        return false;
+      });
+  }
+
+  async signOut() {
+    return await signOut(this.auth)
+      .then(() => {
+        localStorage.clear();
+        return true;
       })
       .catch((error) => {
         console.log("error", error);
